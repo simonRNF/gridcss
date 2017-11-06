@@ -1,0 +1,124 @@
+<html>
+<head>
+    
+    <style>
+        .characters{
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              grid-gap: 10px;
+              grid-auto-rows: minmax(120px, auto);
+            width:940px;
+            grid-template-areas:
+            "hero"
+            "superhero"
+            "palmashow";
+
+            
+            font-family:helvetica;
+            text-transform:uppercase;
+            margin:0 calc(50% - (940px / 3));
+             }
+        
+        .character{
+            height:120px;
+            border-radius:10px;
+            font-size:1.2em;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            color:white;
+            text-shadow:0px 0px  2px black;
+            
+        }
+        .char-dingo{
+            background-color:brown;
+            grid-column:1 / 3;
+            grid-row:1 / 3;
+            }
+        .char-batman{
+            background-color:antiquewhite;
+            grid-column:1;
+            grid-row:2;
+            }
+        .char-ElmutKruger{
+            background-color:dodgerblue;
+            grid-column:2;
+            grid-row:2;
+            }
+        
+        
+        /* Quand l'écran fait moins de 768px de large */ 
+        @media screen and (max-width: 768px) {
+            .characters{
+                grid-template-columns: repeat(1, 1fr);
+                width:100%;
+                margin:0;
+                }
+            .character{grid-column:1;}
+            .char-batman{grid-row:2;}
+            .char-elmutkruger{grid-row:3;}
+        }
+        
+        /* Quand l'écran fait entre 768px de large et 1024px */ 
+        @media screen and (min-width: 768px) and (max-width: 1024px){
+            .characters{
+                grid-template-columns: repeat(3, 1fr);
+                width:600px;
+
+                }
+            .char-dingo{
+                grid-column:1;
+                }
+            .char-batman{
+                grid-row:2;
+                grid-column:2;
+                }        
+            .char-elmutkruger{
+                grid-row:3;
+                grid-column:3;
+                }
+        }
+        
+        /* Quand l'écran fait plus de 1280px de large */ 
+    @media screen and (min-width: 1280px) {
+            .characters{
+                grid-template-columns: repeat(3, 1fr);
+                width:640px;
+                }
+
+            .char-dingo{
+                grid-column:1 / 3;
+                }
+            .char-batman{
+                grid-row:2;
+                grid-column:2 / 4;
+                }        
+            .char-elmutkruger{
+                grid-row:3;
+                grid-column:1 / 3;
+                }
+        }
+    </style>
+    </head>
+<body>
+    
+    
+    
+    <div class="characters wrapper">
+        <div class="character char-dingo">Dingo</div>
+        <div class="character char-batman">Batman</div>
+        <div class="character char-ElmutKruger">ElmutKruger</div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </body>
+</html>
