@@ -1,6 +1,8 @@
 <html>
 <head>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
         .characters{
               display: grid;
@@ -28,6 +30,7 @@
             justify-content: center;
             color:white;
             text-shadow:0px 0px  2px black;
+            border-radius:200px;
             
         }
         .char-dingo{
@@ -44,7 +47,12 @@
             background-color:dodgerblue;
             grid-column:2;
             grid-row:2;
+            transition: transform 10s;
             }
+        
+        .char-ElmutKruger:hover{
+            transform:rotate( 2000deg);
+        }
         
         
         /* Quand l'écran fait moins de 768px de large */ 
@@ -99,15 +107,32 @@
                 }
         }
     </style>
+    <script>
+    
+    cond=false;
+    function change(){
+        if(cond){
+            $(".character").animate({borderRadius: '200px'},400);
+            cond=false;
+        }
+        else{
+            $(".character").animate({borderRadius: '0px'},400);
+            cond=true;
+        }
+      
+    }
+    
+
+    </script>
     </head>
 <body>
     
     
     
     <div class="characters wrapper">
-        <div class="character char-dingo">Dingo</div>
-        <div class="character char-batman">Batman</div>
-        <div class="character char-ElmutKruger">ElmutKruger</div>
+        <div class="character char-dingo" onclick='change()'>Dingo</div>
+        <div class="character char-batman" onclick='change()'>Batman</div>
+        <div class="character char-ElmutKruger" onclick='change()'>ElmutKruger</div>
     </div>
     
     
